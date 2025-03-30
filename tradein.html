@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trade-In Your Device</title>
+    <link rel="stylesheet" href="tradein.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+        <nav>
+            <div class="logo">
+                <img src="logo.jpg" alt="Phone Store Logo">
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="browse.html">Browse</a></li>
+                <li><a href="tradein.html">Trade-In</a></li>
+                <li><a href="cart.html">Shopping Cart (<span id="cart-count">0</span>)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="trade-in">
+        <h2>Trade-In Your Device</h2>
+        <p>Before trading in your device, please ensure the following:</p>
+        
+        <form id="trade-in-form">
+            <label><input type="checkbox"> Device turns on and functions properly</label><br>
+            <label><input type="checkbox"> No cracks on screen or body</label><br>
+            <label><input type="checkbox"> No water damage</label><br>
+            <label><input type="checkbox"> Find My iPhone / Google Lock is disabled</label><br>
+            <label><input type="checkbox"> Device is fully factory reset</label><br>
+
+            <h3>Upload Photos of Your Device</h3>
+            <input type="file" id="device-images" multiple><br><br>
+
+            <button type="submit">Submit Trade-In</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Phone Store</p>
+    </footer>
+
+    <script>
+        document.getElementById("trade-in-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            alert("Trade-in request submitted! Our team will contact you soon.");
+        });
+    </script>
+</body>
+</html>

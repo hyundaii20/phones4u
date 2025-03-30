@@ -1,0 +1,144 @@
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #a6b4bf;
+    margin: 0;
+    padding: 0;
+    color: #FF9700;  /* Default text color for smaller text */
+}
+
+/* Navbar Styling */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #000;
+    width: 100%;
+    padding: 15px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+nav .logo img {
+    height: 65px;  /* Logo size */
+    width: auto;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+nav ul li a:hover {
+    background: #555;
+}
+
+/* Body Content */
+main {
+    margin-top: 100px; /* Prevent overlap with fixed navbar */
+    padding: 40px;
+}
+
+/* Section Title */
+h2 {
+    color: #000;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Form Styling */
+form {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Elements */
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
+}
+
+input[type="text"], input[type="email"], input[type="file"], textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #fff;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="file"]:focus, textarea:focus {
+    border-color: #FF9700;
+    outline: none;
+}
+
+/* Checkboxes */
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+/* Submit Button */
+button[type="submit"] {
+    background: #000;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 20px;
+    transition: background 0.3s ease;
+    width: 100%;
+}
+
+button[type="submit"]:hover {
+    background: #333;
+}
+
+/* Image Upload Section */
+.image-upload-section {
+    margin-bottom: 40px;
+}
+
+.image-upload-section label {
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 15px;
+    display: block;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #FF9700;
+    color: #000;
+    margin-top: 40px;
+    width: 100%;
+    box-sizing: border-box;
+}

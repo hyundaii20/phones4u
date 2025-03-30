@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="loading-screen">
+        <img src="animatedlogo.gif" alt="Loading..." id="loading-gif">
+    </div>
+
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="logo.jpg" alt="Phone Store Logo">
+            </div>
+            
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="browse.html">Browse</a></li>
+                <li><a href="tradein.html">Trade-In</a></li>
+                <li><a href="cart.html">Shopping Cart (<span id="cart-count">0</span>)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>At Phones4U, located in the heart of Galway, we strive to provide good quality phones at affordable prices. 
+            Our mission is to make smartphones accessible to everyone, offering a wide selection of devices. 
+            Whether youre after the latest model or a more affordable option, we guarantee great value for money. 
+            We also offer a convenient trade in service, allowing you to get cash or credit towards your next purchase by trading in your old device. 
+            At Phones4U, customer satisfaction is our priority, and we are committed to ensuring you receive the best deals and excellent service.
+        </p>
+    </section>
+
+    <section id="featured">
+        <h2>Featured Phones</h2>
+        <div class="product">
+            <img src="iphone15.avif" alt="iPhone 15">
+            <h3>iPhone 15</h3>
+            <p>Price: €999</p>
+            <button onclick="addToCart('iPhone 15', 999)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="s24.avif" alt="Samsung Galaxy S24">
+            <h3>Samsung Galaxy S24</h3>
+            <p>Price: €899</p>
+            <button onclick="addToCart('Samsung Galaxy S24', 899)">Add to Cart</button>
+        </div>
+    </section>
+
+    <footer>
+        <h2>&copy; 2025 Phone Store</h2>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

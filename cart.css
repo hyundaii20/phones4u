@@ -1,0 +1,85 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #a6b4bf;
+    margin: 0;
+    padding: 0;
+}
+
+/* Cart Container */
+#cart-container {
+    max-width: 800px;
+    margin: 50px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Heading */
+h2 {
+    text-align: center;
+    color: black;
+}
+
+/* Cart Items */
+#cart-items {
+    padding: 15px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.cart-item p {
+    margin: 0;
+    font-size: 16px;
+}
+
+/* Buttons */
+.cart-item button,
+#checkout-btn {
+    background: #FF9700;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.cart-item button:hover {
+    background: darkred;
+}
+
+#checkout-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#checkout-btn:hover {
+    background: #e08500;
+}
+
+/* Total Price */
+#cart-total {
+    text-align: right;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Empty Cart Message */
+#cart-items p {
+    text-align: center;
+    font-size: 18px;
+    color: #888;
+}
