@@ -3,64 +3,248 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Browse Phones</title>
+    <meta name="description" content="Browse our wide selection of smartphones at Phones4U Galway">
+    <meta name="keywords" content="phones, smartphones, iPhone, Samsung, Google Pixel, mobile phones, Galway">
+    <title>Browse Phones - Phones4U</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <div id="loading-screen">
-        <img src="animatedlogo.gif" alt="Loading..." id="loading-gif">
+        <div class="loader"></div>
     </div>
+
     <header>
         <nav>
             <div class="logo">
-                <img src="logo.jpg" alt="Phone Store Logo">
+                <img src="animatedlogo.gif" alt="Phones4U Logo">
             </div>
+            
+            <div class="search-bar">
+                <input type="text" placeholder="Search phones..." id="search-input">
+                <button type="button" id="search-button">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="browse.html">Browse</a></li>
-                <li><a href="tradein.html">Trade-In</a></li>
-                <li><a href="cart.html">Shopping Cart (<span id="cart-count">0</span>)</a></li>
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="browse.html" class="active"><i class="fas fa-mobile-alt"></i> Browse</a></li>
+                <li><a href="tradein.html"><i class="fas fa-exchange-alt"></i> Trade-In</a></li>
+                <li>
+                    <a href="cart.html" class="cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span id="cart-count">0</span>
+                    </a>
+                </li>
             </ul>
         </nav>
     </header>
 
-    <section id="browse">
-        <h2>Browse Phones</h2>
-        <div class="product">
-            <img src="iphone15.avif" alt="iPhone 15">
-            <h3>iPhone 15</h3>
-            <p>Price: €999</p>
-            <button onclick="addToCart('iPhone 15', 999)">Add to Cart</button>
-        </div>
-        <div class="product">
-            <img src="s24.avif" alt="Samsung Galaxy S24">
-            <h3>Samsung Galaxy S24</h3>
-            <p>Price: €899</p>
-            <button onclick="addToCart('Samsung Galaxy S24', 899)">Add to Cart</button>
-        </div>
-        <div class="product">
-            <img src="iphone14.avif" alt="iPhone 14">
-            <h3>iPhone 14</h3>
-            <p>Price: €799</p>
-            <button onclick="addToCart('iPhone 14', 799)">Add to Cart</button>
-        </div>
-        <div class="product">
-            <img src="pixel8.avif" alt="Google Pixel 8">
-            <h3>Google Pixel 8</h3>
-            <p>Price: €849</p>
-            <button onclick="addToCart('Google Pixel 8', 849)">Add to Cart</button>
-        </div>
-        <div class="product">
-            <img src="iphone12.avif" alt="OnePlus 12">
-            <h3>iPhone 12</h3>
-            <p>Price: €749</p>
-            <button onclick="addToCart('iPhone 12', 749)">Add to Cart</button>
-        </div>
-    </section>
+    <main>
+        <section id="browse-header" class="page-header">
+            <div class="header-content">
+                <h1>Browse Our Phones</h1>
+                <p>Find your perfect smartphone from our extensive collection</p>
+            </div>
+        </section>
+
+        <section id="browse-content">
+            <div class="filters-sidebar">
+                <div class="filter-group">
+                    <h3>Brand</h3>
+                    <label><input type="checkbox" value="apple"> Apple</label>
+                    <label><input type="checkbox" value="samsung"> Samsung</label>
+                    <label><input type="checkbox" value="google"> Google</label>
+                </div>
+                
+                <div class="filter-group">
+                    <h3>Price Range</h3>
+                    <label><input type="checkbox" value="0-500"> €0 - €500</label>
+                    <label><input type="checkbox" value="501-800"> €501 - €800</label>
+                    <label><input type="checkbox" value="801+"> €801+</label>
+                </div>
+
+                <div class="filter-group">
+                    <h3>Features</h3>
+                    <label><input type="checkbox" value="5g"> 5G</label>
+                    <label><input type="checkbox" value="wireless"> Wireless Charging</label>
+                    <label><input type="checkbox" value="dual-sim"> Dual SIM</label>
+                </div>
+
+                <button id="apply-filters" class="primary-button">
+                    <i class="fas fa-filter"></i> Apply Filters
+                </button>
+            </div>
+
+            <div class="products-container">
+                <div class="sort-bar">
+                    <select id="sort-select">
+                        <option value="featured">Featured</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="newest">Newest First</option>
+                    </select>
+                </div>
+
+                <div class="products-grid">
+                    <div class="product">
+                        <div class="product-badge">New</div>
+                        <img src="iphone15.avif" alt="iPhone 15" loading="lazy">
+                        <h3>iPhone 15</h3>
+                        <p class="price">€999</p>
+                        <div class="product-details">
+                            <span><i class="fas fa-microchip"></i> A16 Bionic</span>
+                            <span><i class="fas fa-camera"></i> 48MP</span>
+                        </div>
+                        <div class="product-features">
+                            <span><i class="fas fa-wifi"></i> 5G</span>
+                            <span><i class="fas fa-battery-full"></i> All-day battery</span>
+                        </div>
+                        <button onclick="addToCart('iPhone 15', 999)" class="add-to-cart">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+
+                    <div class="product">
+                        <div class="product-badge">Best Seller</div>
+                        <img src="s24.avif" alt="Samsung Galaxy S24" loading="lazy">
+                        <h3>Samsung Galaxy S24</h3>
+                        <p class="price">€899</p>
+                        <div class="product-details">
+                            <span><i class="fas fa-microchip"></i> Snapdragon 8 Gen 3</span>
+                            <span><i class="fas fa-camera"></i> 50MP</span>
+                        </div>
+                        <div class="product-features">
+                            <span><i class="fas fa-wifi"></i> 5G</span>
+                            <span><i class="fas fa-sync"></i> Wireless charging</span>
+                        </div>
+                        <button onclick="addToCart('Samsung Galaxy S24', 899)" class="add-to-cart">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+
+                    <div class="product">
+                        <div class="product-badge">Popular</div>
+                        <img src="pixel8.avif" alt="Google Pixel 8" loading="lazy">
+                        <h3>Google Pixel 8</h3>
+                        <p class="price">€799</p>
+                        <div class="product-details">
+                            <span><i class="fas fa-microchip"></i> Tensor G3</span>
+                            <span><i class="fas fa-camera"></i> 50MP</span>
+                        </div>
+                        <div class="product-features">
+                            <span><i class="fas fa-magic"></i> AI features</span>
+                            <span><i class="fas fa-moon"></i> Night Sight</span>
+                        </div>
+                        <button onclick="addToCart('Google Pixel 8', 799)" class="add-to-cart">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+
+                    <div class="product">
+                        <div class="product-badge">Value</div>
+                        <img src="iphone14.avif" alt="iPhone 14" loading="lazy">
+                        <h3>iPhone 14</h3>
+                        <p class="price">€799</p>
+                        <div class="product-details">
+                            <span><i class="fas fa-microchip"></i> A15 Bionic</span>
+                            <span><i class="fas fa-camera"></i> 12MP</span>
+                        </div>
+                        <div class="product-features">
+                            <span><i class="fas fa-wifi"></i> 5G</span>
+                            <span><i class="fas fa-shield-alt"></i> Ceramic Shield</span>
+                        </div>
+                        <button onclick="addToCart('iPhone 14', 799)" class="add-to-cart">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+
+                    <div class="product">
+                        <div class="product-badge">Budget</div>
+                        <img src="iphone12.avif" alt="iPhone 12" loading="lazy">
+                        <h3>iPhone 12</h3>
+                        <p class="price">€599</p>
+                        <div class="product-details">
+                            <span><i class="fas fa-microchip"></i> A14 Bionic</span>
+                            <span><i class="fas fa-camera"></i> 12MP</span>
+                        </div>
+                        <div class="product-features">
+                            <span><i class="fas fa-wifi"></i> 5G</span>
+                            <span><i class="fas fa-tint"></i> Water resistant</span>
+                        </div>
+                        <button onclick="addToCart('iPhone 12', 599)" class="add-to-cart">
+                            <i class="fas fa-cart-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <div class="pagination">
+                    <button class="page-button active">1</button>
+                    <button class="page-button">2</button>
+                    <button class="page-button">3</button>
+                    <button class="page-button"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer>
-        <p>&copy; 2025 Phone Store</p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Phones4U</h3>
+                <p>Your trusted phone store in Galway offering the latest smartphones, trade-in services, and expert support.</p>
+                <div class="social-links">
+                    <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="browse.html">Browse Phones</a></li>
+                    <li><a href="tradein.html">Trade-In</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <ul class="contact-info">
+                    <li><i class="fas fa-map-marker-alt"></i> Shop Street, Galway City</li>
+                    <li><i class="fas fa-phone"></i> (091) 123-4567</li>
+                    <li><i class="fas fa-envelope"></i> info@phones4u.ie</li>
+                    <li><i class="fas fa-clock"></i> Mon-Sat: 9:00 AM - 6:00 PM</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <p>Subscribe to get updates on new phones and special offers.</p>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="Enter your email">
+                    <button type="button" class="subscribe-btn">Subscribe</button>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-info">
+                <p>&copy; 2025 Phones4U. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms & Conditions</a>
+                    <a href="sitemap.html">Sitemap</a>
+                </div>
+            </div>
+            <div class="payment-methods">
+                <i class="fab fa-cc-visa"></i>
+                <i class="fab fa-cc-mastercard"></i>
+                <i class="fab fa-cc-paypal"></i>
+                <i class="fab fa-apple-pay"></i>
+            </div>
+        </div>
     </footer>
 
     <script src="script.js"></script>

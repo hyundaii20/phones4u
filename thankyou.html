@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout - Phones4U</title>
+    <title>Thank You - Phones4U</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -16,7 +16,7 @@
     <header>
         <nav>
             <div class="logo">
-                <img src="logo.jpg" alt="Phones4U Logo">
+                <img src="animatedlogo.gif" alt="Phones4U Logo">
             </div>
             <ul>
                 <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
@@ -33,60 +33,38 @@
     </header>
 
     <main>
-        <section id="checkout-header" class="page-header">
+        <section id="thankyou-content" class="page-header">
             <div class="header-content">
-                <h1>Secure Checkout</h1>
-                <p>Complete your purchase securely</p>
+                <i class="fas fa-check-circle success-icon"></i>
+                <h1>Thank You for Your Order!</h1>
+                <p>Your order has been successfully placed.</p>
             </div>
         </section>
 
-        <section id="checkout-content">
-            <div class="checkout-container">
-                <div class="checkout-form">
-                    <h2>Payment Details</h2>
-                    <form id="payment-form">
-                        <div class="input-group">
-                            <label for="card-name">Cardholder Name</label>
-                            <input type="text" id="card-name" placeholder="John Doe" required>
-                        </div>
-
-                        <div class="input-group">
-                            <label for="card-number">Card Number</label>
-                            <input type="text" id="card-number" placeholder="1234 5678 9012 3456" maxlength="19" required>
-                        </div>
-
-                        <div class="row">
-                            <div class="input-group">
-                                <label for="expiry">Expiry Date</label>
-                                <input type="text" id="expiry" placeholder="MM/YY" maxlength="5" required>
-                            </div>
-
-                            <div class="input-group">
-                                <label for="cvv">CVV</label>
-                                <input type="text" id="cvv" placeholder="123" maxlength="3" required>
-                            </div>
-                        </div>
-
-                        <button type="submit" class="primary-button checkout-button">
-                            <i class="fas fa-lock"></i> Complete Payment
-                        </button>
-
-                        <div class="secure-checkout">
-                            <i class="fas fa-shield-alt"></i>
-                            <p>Your payment information is secure</p>
-                        </div>
-
-                        <div class="payment-methods">
-                            <i class="fab fa-cc-visa"></i>
-                            <i class="fab fa-cc-mastercard"></i>
-                            <i class="fab fa-cc-paypal"></i>
-                            <i class="fab fa-apple-pay"></i>
-                        </div>
-                    </form>
+        <section class="order-confirmation">
+            <div class="confirmation-container">
+                <div class="order-details">
+                    <h2>Order Details</h2>
+                    <div id="order-number"></div>
+                    <div id="order-summary"></div>
                 </div>
 
-                <div id="checkout-summary" class="checkout-summary">
-                    <!-- Order summary will be dynamically inserted here -->
+                <div class="next-steps">
+                    <h3>What's Next?</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> You will receive an order confirmation email shortly</li>
+                        <li><i class="fas fa-truck"></i> We will notify you when your order ships</li>
+                        <li><i class="fas fa-mobile-alt"></i> Your new phone will arrive within 2-3 business days</li>
+                    </ul>
+                </div>
+
+                <div class="action-buttons">
+                    <a href="browse.html" class="secondary-button">
+                        <i class="fas fa-mobile-alt"></i> Continue Shopping
+                    </a>
+                    <a href="index.html" class="primary-button">
+                        <i class="fas fa-home"></i> Return to Home
+                    </a>
                 </div>
             </div>
         </section>
@@ -151,4 +129,4 @@
 
     <script src="script.js"></script>
 </body>
-</html>
+</html> 

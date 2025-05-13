@@ -3,59 +3,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phone Store</title>
+    <meta name="description" content="Phones4U - Your trusted phone store in Galway offering the latest smartphones and trade-in services">
+    <meta name="keywords" content="phones, smartphones, iPhone, Samsung, trade-in, Galway, mobile phones">
+    <title>Phones4U - Your Trusted Phone Store in Galway</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-
     <div id="loading-screen">
-        <img src="animatedlogo.gif" alt="Loading..." id="loading-gif">
+        <div class="loader"></div>
     </div>
 
     <header>
         <nav>
             <div class="logo">
-                <img src="logo.jpg" alt="Phone Store Logo">
+                <img src="animatedlogo.gif" alt="Phones4U Logo">
             </div>
             
+            <div class="search-bar">
+                <input type="text" placeholder="Search phones..." id="search-input">
+                <button type="button" id="search-button">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="browse.html">Browse</a></li>
-                <li><a href="tradein.html">Trade-In</a></li>
-                <li><a href="cart.html">Shopping Cart (<span id="cart-count">0</span>)</a></li>
+                <li><a href="index.html" class="active"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="browse.html"><i class="fas fa-mobile-alt"></i> Browse</a></li>
+                <li><a href="tradein.html"><i class="fas fa-exchange-alt"></i> Trade-In</a></li>
+                <li>
+                    <a href="cart.html" class="cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span id="cart-count">0</span>
+                    </a>
+                </li>
             </ul>
         </nav>
     </header>
 
-    <section id="about">
-        <h2>About Us</h2>
-        <p>At Phones4U, located in the heart of Galway, we strive to provide good quality phones at affordable prices. 
-            Our mission is to make smartphones accessible to everyone, offering a wide selection of devices. 
-            Whether youre after the latest model or a more affordable option, we guarantee great value for money. 
-            We also offer a convenient trade in service, allowing you to get cash or credit towards your next purchase by trading in your old device. 
-            At Phones4U, customer satisfaction is our priority, and we are committed to ensuring you receive the best deals and excellent service.
-        </p>
-    </section>
+    <main>
+        <section id="hero">
+            <div class="hero-content">
+                <h1>Find Your Perfect Phone</h1>
+                <p>Discover the latest smartphones with amazing deals and trade-in options</p>
+                <div class="hero-buttons">
+                    <a href="browse.html" class="cta-button">
+                        <i class="fas fa-mobile-alt"></i> Browse Phones
+                    </a>
+                    <a href="tradein.html" class="cta-button secondary">
+                        <i class="fas fa-exchange-alt"></i> Trade-In
+                    </a>
+                </div>
+            </div>
+        </section>
 
-    <section id="featured">
-        <h2>Featured Phones</h2>
-        <div class="product">
-            <img src="iphone15.avif" alt="iPhone 15">
-            <h3>iPhone 15</h3>
-            <p>Price: €999</p>
-            <button onclick="addToCart('iPhone 15', 999)">Add to Cart</button>
-        </div>
-        <div class="product">
-            <img src="s24.avif" alt="Samsung Galaxy S24">
-            <h3>Samsung Galaxy S24</h3>
-            <p>Price: €899</p>
-            <button onclick="addToCart('Samsung Galaxy S24', 899)">Add to Cart</button>
-        </div>
-    </section>
+        <section id="features">
+            <div class="section-header">
+                <h2>Why Choose Us</h2>
+                <p>Experience the best service in Galway</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature">
+                    <i class="fas fa-truck"></i>
+                    <h3>Free Delivery</h3>
+                    <p>Fast and free delivery on all orders in Galway</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Warranty</h3>
+                    <p>All phones come with manufacturer warranty</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-exchange-alt"></i>
+                    <h3>Trade-In</h3>
+                    <p>Get the best value for your old phone</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-headset"></i>
+                    <h3>Expert Support</h3>
+                    <p>Professional assistance whenever you need</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="featured">
+            <div class="section-header">
+                <h2>Featured Phones</h2>
+                <p>Check out our latest arrivals</p>
+            </div>
+            <div class="products-grid">
+                <!-- Products will be dynamically inserted here -->
+            </div>
+            <div class="view-all">
+                <a href="browse.html" class="primary-button">
+                    <i class="fas fa-arrow-right"></i> View All Phones
+                </a>
+            </div>
+        </section>
+    </main>
 
     <footer>
-        <h2>&copy; 2025 Phone Store</h2>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Phones4U</h3>
+                <p>Your trusted phone store in Galway offering the latest smartphones, trade-in services, and expert support.</p>
+                <div class="social-links">
+                    <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="browse.html">Browse Phones</a></li>
+                    <li><a href="tradein.html">Trade-In</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <ul class="contact-info">
+                    <li><i class="fas fa-map-marker-alt"></i> Shop Street, Galway City</li>
+                    <li><i class="fas fa-phone"></i> (091) 123-4567</li>
+                    <li><i class="fas fa-envelope"></i> info@phones4u.ie</li>
+                    <li><i class="fas fa-clock"></i> Mon-Sat: 9:00 AM - 6:00 PM</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <p>Subscribe to get updates on new phones and special offers.</p>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="Enter your email">
+                    <button type="button" class="subscribe-btn">Subscribe</button>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-info">
+                <p>&copy; 2025 Phones4U. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms & Conditions</a>
+                    <a href="sitemap.html">Sitemap</a>
+                </div>
+            </div>
+            <div class="payment-methods">
+                <i class="fab fa-cc-visa"></i>
+                <i class="fab fa-cc-mastercard"></i>
+                <i class="fab fa-cc-paypal"></i>
+                <i class="fab fa-apple-pay"></i>
+            </div>
+        </div>
     </footer>
 
     <script src="script.js"></script>

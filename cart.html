@@ -3,32 +3,178 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shopping Cart</title>
+    <meta name="description" content="Your shopping cart at Phones4U - Review and checkout your selected phones">
+    <meta name="keywords" content="shopping cart, checkout, phones, smartphones, Galway">
+    <title>Shopping Cart - Phones4U</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="cart.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+    <div id="loading-screen">
+        <div class="loader"></div>
+    </div>
 
     <header>
         <nav>
-            <div class="logo"><img src="logo.jpg" alt="Phone Store Logo"></div>
+            <div class="logo">
+                <img src="animatedlogo.gif" alt="Phones4U Logo">
+            </div>
+            
+            <div class="search-bar">
+                <input type="text" placeholder="Search phones..." id="search-input">
+                <button type="button" id="search-button">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="browse.html">Browse</a></li>
-                <li><a href="tradein.html">Trade-In</a></li>
-                <li><a href="cart.html">Shopping Cart (<span id="cart-count">0</span>)</a></li>
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="browse.html"><i class="fas fa-mobile-alt"></i> Browse</a></li>
+                <li><a href="tradein.html"><i class="fas fa-exchange-alt"></i> Trade-In</a></li>
+                <li>
+                    <a href="cart.html" class="cart-icon active">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span id="cart-count">0</span>
+                    </a>
+                </li>
             </ul>
         </nav>
     </header>
 
-    <div id="cart-container">
-        <h2>Your Shopping Cart</h2>
-        <div id="cart-items"></div>
-        <h3 id="cart-total">Total: €0.00</h3>
-        <button id="checkout-btn" onclick="goToCheckout()">Proceed to Checkout</button>
-    </div>
+    <main>
+        <section id="cart-header" class="page-header">
+            <div class="header-content">
+                <h1>Your Shopping Cart</h1>
+                <p>Review your items and proceed to checkout</p>
+            </div>
+        </section>
+
+        <section id="cart-content">
+            <div class="cart-container">
+                <div id="cart-items" class="cart-items">
+                    <!-- Cart items will be dynamically inserted here -->
+                </div>
+
+                <div class="cart-summary">
+                    <h2>Order Summary</h2>
+                    <div class="summary-item">
+                        <span>Subtotal</span>
+                        <span id="subtotal">€0.00</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Shipping</span>
+                        <span>Free</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>VAT (23%)</span>
+                        <span id="vat">€0.00</span>
+                    </div>
+                    <div class="summary-item total">
+                        <span>Total</span>
+                        <span id="total">€0.00</span>
+                    </div>
+
+                    <div class="promo-code">
+                        <input type="text" placeholder="Enter promo code" id="promo-input">
+                        <button id="apply-promo" class="secondary-button">
+                            <i class="fas fa-tag"></i> Apply
+                        </button>
+                    </div>
+
+                    <button onclick="proceedToCheckout()" class="primary-button checkout-button">
+                        <i class="fas fa-lock"></i> Proceed to Checkout
+                    </button>
+
+                    <div class="secure-checkout">
+                        <i class="fas fa-shield-alt"></i>
+                        <p>Secure Checkout</p>
+                    </div>
+
+                    <div class="payment-methods">
+                        <i class="fab fa-cc-visa"></i>
+                        <i class="fab fa-cc-mastercard"></i>
+                        <i class="fab fa-cc-paypal"></i>
+                        <i class="fab fa-apple-pay"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="empty-cart-message" style="display: none;">
+                <i class="fas fa-shopping-cart"></i>
+                <h2>Your cart is empty</h2>
+                <p>Looks like you haven't added any phones to your cart yet.</p>
+                <a href="browse.html" class="primary-button">
+                    <i class="fas fa-mobile-alt"></i> Browse Phones
+                </a>
+            </div>
+
+            <div class="recommended-products">
+                <h2>You Might Also Like</h2>
+                <div class="products-grid">
+                    <!-- Recommended products will be dynamically inserted here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Phones4U</h3>
+                <p>Your trusted phone store in Galway offering the latest smartphones, trade-in services, and expert support.</p>
+                <div class="social-links">
+                    <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="browse.html">Browse Phones</a></li>
+                    <li><a href="tradein.html">Trade-In</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <ul class="contact-info">
+                    <li><i class="fas fa-map-marker-alt"></i> Shop Street, Galway City</li>
+                    <li><i class="fas fa-phone"></i> (091) 123-4567</li>
+                    <li><i class="fas fa-envelope"></i> info@phones4u.ie</li>
+                    <li><i class="fas fa-clock"></i> Mon-Sat: 9:00 AM - 6:00 PM</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <p>Subscribe to get updates on new phones and special offers.</p>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="Enter your email">
+                    <button type="button" class="subscribe-btn">Subscribe</button>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-info">
+                <p>&copy; 2025 Phones4U. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms & Conditions</a>
+                    <a href="sitemap.html">Sitemap</a>
+                </div>
+            </div>
+            <div class="payment-methods">
+                <i class="fab fa-cc-visa"></i>
+                <i class="fab fa-cc-mastercard"></i>
+                <i class="fab fa-cc-paypal"></i>
+                <i class="fab fa-apple-pay"></i>
+            </div>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
-    <script src="checkout.js"></script>
 </body>
 </html>
